@@ -1,0 +1,115 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	list-style: none;
+}
+/*------variables---------*/
+:root {
+	--space: 2rem;
+	--main-color: #da6285;
+	--pink-color: #ff8e9d;
+	--pink-opacity: #ffe6e9;
+	--white-alpha-40: rgba(255, 255, 255, 0.4);
+	--white-alpha-25: rgba(255, 255, 255, 0.25);
+	--backdrop-filter: blur(5px);
+	--box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/*------global styling---------*/
+body {
+	background-image: url('../image/bg1.webp');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.btn {
+	background-color: var(--white-alpha-25);
+	border: 2px solid var(--white-alpha-40);
+	backdrop-filter: var(--backdrop-filter);
+	box-shadow: var(--box-shadow);
+	text-transform: capitalize;
+	color: var(--main-color);
+	padding: 8rem 2rem;
+	border-radius: 1.5rem;
+	font-size: 20px;
+	cursor: pointer;
+	position: relative;
+}
+.btn::before {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	border-radius: 30px;
+	background-color: var(--main-color);
+	z-index: -1;
+	transition: width 0.3s ease;
+}
+.btn:hover::before {
+	width: 100%;
+}
+.btn:hover {
+	color: #fff;
+}
+.empty {
+	background-color: var(--white-alpha-25);
+	border: 2px solid var(--white-alpha-40);
+	backdrop-filter: var(--backdrop-filter);
+	box-shadow: var(--box-shadow);
+	text-transform: capitalize;
+	color: var(--main-color);
+	padding: 1.5rem;
+	text-align: center;
+	margin: 2rem auto;
+}
+.empty p {
+	font-size: 20px;
+	margin-bottom: 2rem;
+}
+input[type='submit'] {
+	cursor: pointer;
+}
+input[type='submit']:hover {
+	color: var(--main-color);
+}
+
+.box-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+	align-items: center;
+}
+.box-container .box {
+	background-color: var(--white-alpha-25);
+	border: 2px solid var(--white-alpha-40);
+	backdrop-filter: var(--backdrop-filter);
+	box-shadow: var(--box-shadow);
+	margin: 1rem;
+}
+
+.heading {
+	text-align: center;
+	line-height: 1.5;
+}
+.heading h1 {
+	font-size: 2rem;
+	text-transform: capitalize;
+}
+.heading span {
+	color: var(--main-color);
+	text-transform: capitalize;
+	font-size: 16px;
+}
+.heading img {
+	margin-top: 0.5rem;
+	width: 150px;
+}
