@@ -39,14 +39,15 @@ include '../components/connect.php';
             <input type="password" name="cpass" placeholder="confirm your password" maxlength="50" required class="box">
           </div>
         </div>
-        <div class="input-field">
-          <p>your profile <span>*</span></p>
-          <input type="file" name="image" accept="image/*" required class="box">
-        </div>
-        <p class="link">alredy have an account? <a href="login.php">login now</a> </p>
-        <input type="submit" name="submit" value="register now" class="btn">
 
       </div>
+      <div class="input-field">
+        <p>your profile <span>*</span></p>
+        <input type="file" name="image" accept="image/*" required class="box">
+      </div>
+      <p class="link">alredy have an account? <a href="login.php">login now</a> </p>
+      <input type="submit" name="submit" value="register now" class="btn">
+
     </form>
   </div>
 
