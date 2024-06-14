@@ -26,10 +26,10 @@ if(isset($_POST['submit'])){
   $select_seller = $conn->prepare("SELECT * FROM `sellers` WHERE email = ?");
   $select_seller -> execute([$email]);
 
-  If($select_seller->rowCount() > 0) {
+  if ($select_seller->rowCount() > 0) {
     $warning_msg[] = 'email already exist!';
   }else{
-    if($pass != $spass) {
+    if($pass != $cpass) {
       $warning_msg[] = 'confirm password not matched';
     }else{
       $insert_seller = $conn->prepare("INSERT INTO `sellers`(id, name, email, password, image) VALUES(?, ?, ?, ?, ?)");
@@ -92,7 +92,8 @@ if(isset($_POST['submit'])){
 
 
   <!-- sweetalert cdn link -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"> </script>
+  
   <!-- custom js link -->
   <script src="../js/script.js"></script>
 
