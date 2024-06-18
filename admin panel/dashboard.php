@@ -55,7 +55,77 @@ if(isset($_COOKIE['seller_id'])) {
                     ?>
                     <h3><?= $number_of_products; ?></h3>
                     <p>products added</p>
-                    <a href="add_product.php" class="btn">add_product</a>
+                    <a href="add_products.php" class="btn">add product</a>
+                </div>
+                <div class="box">
+                    <?php
+                        $select_active_products = $conn->prepare("SELECT * FROM `products` WHERE seller_id = ? AND status = ? ");
+                        $select_active_products->execute([$seller_id, 'active']);
+                        $number_of_active_products = $select_active_products->rowCount();
+                    ?>
+                    <h3><?= $number_of_active_products; ?></h3>
+                    <p>total active products</p>
+                    <a href="view_product.php" class="btn">active product</a>
+                </div>
+                <div class="box">
+                    <?php
+                        $select_deactive_products = $conn->prepare("SELECT * FROM `products` WHERE seller_id = ? AND status = ? ");
+                        $select_deactive_products->execute([$seller_id, 'active']);
+                        $number_of_deactive_products = $select_deactive_products->rowCount();
+                    ?>
+                    <h3><?= $number_of_deactive_products; ?></h3>
+                    <p>total deactive products</p>
+                    <a href="view_product.php" class="btn">deactive product</a>
+                </div>
+                <div class="box">
+                    <?php
+                        $select_users = $conn->prepare("SELECT * FROM `users` ");
+                        $select_users->execute();
+                        $number_of_users = $select_users->rowCount();
+                    ?>
+                    <h3><?= $number_of_users; ?></h3>
+                    <p>users account</p>
+                    <a href="users_accounts.php" class="btn">see users</a>
+                </div>
+                <div class="box">
+                    <?php
+                        $select_sellers = $conn->prepare("SELECT * FROM `sellers` ");
+                        $select_sellers->execute();
+                        $number_of_sellers = $select_sellers->rowCount();
+                    ?>
+                    <h3><?= $number_of_sellers; ?></h3>
+                    <p>sellers account</p>
+                    <a href="users_accounts.php" class="btn">see sellers</a>
+                </div>
+                <div class="box">
+                    <?php
+                        $select_orders = $conn->prepare("SELECT * FROM `orders` WHERE seller_id = ? ");
+                        $select_orders->execute([$seller_id]);
+                        $number_of_orders = $select_orders->rowCount();
+                    ?>
+                    <h3><?= $number_of_orders; ?></h3>
+                    <p>total orders pleced</p>
+                    <a href="admin_order.php" class="btn">total orders</a>
+                </div>
+                <div class="box">
+                    <?php
+                        $select_confirm_orders = $conn->prepare("SELECT * FROM `orders` WHERE seller_id = ? AND status = ? ");
+                        $select_confirm_orders->execute([$seller_id, 'in progress']);
+                        $number_of_confirm_orders = $select_confirm_orders->rowCount();
+                    ?>
+                    <h3><?= $number_of_confirm_orders; ?></h3>
+                    <p>total confirm orders</p>
+                    <a href="admin_order.php" class="btn">confirm orders</a>
+                </div>
+                <div class="box">
+                    <?php
+                        $select_canceled_orders = $conn->prepare("SELECT * FROM `orders` WHERE seller_id = ? AND status = ? ");
+                        $select_canceled_orders->execute([$seller_id, 'canceled']);
+                        $number_of_canceled_orders = $select_canceled_orders->rowCount();
+                    ?>
+                    <h3><?= $number_of_canceled_orders; ?></h3>
+                    <p>total canceled orders</p>
+                    <a href="admin_order.php" class="btn">canceled orders</a>
                 </div>
             </div>
         </section>
