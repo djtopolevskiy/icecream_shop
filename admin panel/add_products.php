@@ -8,6 +8,18 @@ if(isset($_COOKIE['seller_id'])) {
     header('location:loging.php');
 }
 
+//add product in database
+if(isset($_POST['publish'])) {
+
+    $id = unique_id();
+    $name = htmlspecialchars($_POST['name']);
+    // $name = filter_var($name, FILTER_SANITIZE_STRING);
+
+    $price = htmlspecialchars($_POST['price']);
+
+    $description = htmlspecialchars($_POST['description']);
+}
+
 ?>
 
 <!DOCTYPE html>
