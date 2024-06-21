@@ -16,7 +16,7 @@ if(isset($_COOKIE['seller_id'])) {
 <link>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blue Sky Summer - seller registeration page</title>
+<title>Blue Sky Summer - Dashboard page</title>
 <link rel="stylesheet" type="text/css" href="../css/admin_style.css">
 <!--------- font awesome cdn link ---------->
 <!--------- box icon cdn link ---------->

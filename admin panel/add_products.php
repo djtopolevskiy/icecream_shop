@@ -9,7 +9,7 @@ if(isset($_COOKIE['seller_id'])) {
 }
 
 //add product in database
-if(isset($_POST['publish'])) {
+if (isset($_POST['publish'])) {
 
     $id = unique_id();
     $name = htmlspecialchars($_POST['name']);
@@ -18,6 +18,80 @@ if(isset($_POST['publish'])) {
     $price = htmlspecialchars($_POST['price']);
 
     $description = htmlspecialchars($_POST['description']);
+
+    $stock = htmlspecialchars($_POST['stock']);
+
+    $status = 'active';
+
+    $image = htmlspecialchars($_FILES['image']['name']);
+    $image_size = $_FILES['image']['size'];
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_folder = '../uploaded_files/'. $image;
+
+    $select_image = $conn->prepare("SELECT * FROM `products` WHERE image = ? AND seller_id = ?");
+    $select_image->execute([$image, $seller_id]);
+
+    if (isset($image)) {
+        if ($select_image->rowCount() > 0) {
+            $warning_msg = 'image name repeated';
+        } elseif ($image_size > 2000000) {
+            $warning_msg = 'image size is too large';
+        } else {
+            move_uploaded_file($image_tmp_name, $image_folder);
+        }
+    } else {
+        $image = '';
+    }
+    if ($select_image->rowCount() > 0 AND $image != '') {
+        $warning_msg = 'please rename your image';
+    } else {
+        $insert_product = $conn->prepare("INSERT INTO `products`(id, seller_id, name, price, image, stock, product_detail, status) VALUES(?,?,?,?,?,?,?,?)");
+        $insert_product->execute([$id, $seller_id, $name, $price, $image, $stock, $description, $status]);
+        $success_msg[] = 'product inserted successfuly';
+    }
+}
+
+//add product in database as draft
+if (isset($_POST['draft'])) {
+
+    $id = unique_id();
+    $name = htmlspecialchars($_POST['name']);
+    // $name = filter_var($name, FILTER_SANITIZE_STRING);
+
+    $price = htmlspecialchars($_POST['price']);
+
+    $description = htmlspecialchars($_POST['description']);
+
+    $stock = htmlspecialchars($_POST['stock']);
+
+    $status = 'deactive';
+
+    $image = htmlspecialchars($_FILES['image']['name']);
+    $image_size = $_FILES['image']['size'];
+    $image_tmp_name = $_FILES['image']['tmp_name'];
+    $image_folder = '../upluaded_files/'.$image;
+
+    $select_image = $conn->prepare("SELECT * FROM `products` WHERE image = ? AND seller_id = ?");
+    $select_image->execute([$image, $seller_id]);
+
+    if (isset($image)) {
+        if ($select_image->rowCount() > 0) {
+            $warning_msg = 'image name repeated';
+        } elseif ($image_size > 2000000) {
+            $warning_msg = 'image size is too large';
+        } else {
+            move_uploaded_file($image_tmp_name, $image_folder);
+        }
+    } else {
+        $image = '';
+    }
+    if ($select_image->rowCount() > 0 AND $image != '') {
+        $warning_msg = 'please rename your image';
+    } else {
+        $insert_product = $conn->prepare("INSERT INTO `products`(id, seller_id, name, price, image, stock, product_detail, status) VALUES(?,?,?,?,?,?,?,?)");
+        $insert_product->execute([$id, $seller_id, $name, $price, $image, $stock, $description, $status]);
+        $success_msg[] = 'product save as draft successfuly';
+    }
 }
 
 ?>
@@ -28,7 +102,7 @@ if(isset($_POST['publish'])) {
 <link>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blue Sky Summer - seller registeration page</title>
+<title>Blue Sky Summer - Admin Add Products page</title>
 <link rel="stylesheet" type="text/css" href="../css/admin_style.css">
 <!------- font awesome cdn link -------->
 <!--------- box icon cdn link ---------->
