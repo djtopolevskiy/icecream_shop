@@ -70,7 +70,7 @@ if(isset($_COOKIE['seller_id'])) {
                 <div class="box">
                     <?php
                         $select_deactive_products = $conn->prepare("SELECT * FROM `products` WHERE seller_id = ? AND status = ? ");
-                        $select_deactive_products->execute([$seller_id, 'active']);
+                        $select_deactive_products->execute([$seller_id, 'deactive']);
                         $number_of_deactive_products = $select_deactive_products->rowCount();
                     ?>
                     <h3><?= $number_of_deactive_products; ?></h3>

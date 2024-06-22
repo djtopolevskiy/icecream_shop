@@ -69,7 +69,7 @@ if (isset($_POST['draft'])) {
     $image = htmlspecialchars($_FILES['image']['name']);
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
-    $image_folder = '../upluaded_files/'.$image;
+    $image_folder = '../uploaded_files/'.$image;
 
     $select_image = $conn->prepare("SELECT * FROM `products` WHERE image = ? AND seller_id = ?");
     $select_image->execute([$image, $seller_id]);
