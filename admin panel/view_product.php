@@ -70,8 +70,9 @@ if(isset($_POST['delete'])){
                         }
                     }else{
                         echo '
-                            <p>no products added yet! <br><a href="add_products.php" class="btn" style="margin-top: 1.5rem;">add products</a> </p>;
-                            
+                            <div class="empty">
+                                <p>no products added yet! <br><a href="add_products.php" class="btn" style="margin-top: 1.5rem;">add products</a> </p>;
+                            </div>
                         ';
                     }
                 
