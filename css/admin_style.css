@@ -22,7 +22,6 @@
 /*------global styling---------*/
 body {
 	background-image: url('../image/bg1.webp');
-	/* background-repeat: no-repeat; */
 	background-position: center;
 }
 
@@ -42,6 +41,7 @@ html {
 	font-size: 20px;
 	cursor: pointer;
 	position: relative;
+	text-align: center;
 }
 .btn::before {
 	position: absolute;
@@ -161,6 +161,7 @@ section,
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	min-height: 100vh;
 	padding: 4% 0;
 	position: relative;
@@ -192,13 +193,13 @@ section,
 	text-align: center;
 	margin-bottom: 1rem;
 }
-.form-container .register img {
+.form-container .register .img-box img {
 	width: 180px;
 	height: 180px;
-	border-radius: 50px;
+	border-radius: 50%;
 	text-align: center;
 	padding: 10px;
-	background-color: vat(--main-color);
+	background-color: var(--main-color);
 }
 .form-container form h3 {
 	text-align: center;
@@ -247,8 +248,12 @@ section,
 	width: 100%;
 	font-size: 1.3rem;
 }
-.form-container .image {
+.form-container .image{
+	width: 100%;
 	height: 30rem;
+}
+.post_editor input[type="submit"]{
+	width: 49%;
 }
 /*------header section---------*/
 header {
@@ -570,10 +575,140 @@ header .right {
 	height: 50px;
 	margin-top: .8rem;
 }
+/*------profile section-------*/
+.seller-profile .details{
+	background-color: var(--white-alpha-25);
+	border: var(--white-alpha-40);
+	backdrop-filter: var(--backdrop-filter);
+	box-shadow: var(--box-shadow);
+	text-align: center;
+	border-radius: .5rem;
+	padding: 1rem;
+}
+.seller-profile .details .seller{
+	margin-bottom: 2rem;
+}
+.seller-profile .details .seller img{
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-bottom: .5rem;
+	padding: .5rem;
+	background-color: var(--main-color);
+}
+.seller-profile .details .seller h3{
+	font-size: 1.5rem;
+	margin: .5rem 0;
+	text-transform: capitalize;
+}
+.seller-profile .details .seller span {
+	font-size: 1.2rem;
+	color: gray;
+	display: block;
+	margin-bottom: 2rem;
+	text-transform: capitalize;
+}
+.seller-profile .details .flex{
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 4rem 0;
+}
+.seller-profile .details .flex .box{
+	flex: 1 1 20rem;
+	border-radius: .5rem;
+	background-color: #cccccc33;
+	padding: 2rem;
+}
+.seller-profile .details .flex .box span{
+	color: var(--main-color);
+	display: block;
+	margin-bottom: .5rem;
+	font-size: 2.5rem;
+	text-transform: capitalize;
+}
+.seller-profile .details .flex .box p{
+	font-size: 2rem;
+	color: #000;
+	padding: .5rem 0;
+	margin-bottom: 1rem;
+}
 
 
+/*------message block-------*/
+.message-container .box-container .box {
+	line-height: 2;
+	padding: 2rem;
 
+}
+.message-container .box-container .box .name{
+	text-transform: capitalize;
+	font-size: 1.5rem;
+}
+.message-container .box-container .box h4{
+	text-transform: capitalize;
+	color: var(--main-color);
+}
+.message-container .box-container .box p{
+	margin-bottom: 1rem;
 
+}
+
+/*------order block-------*/
+.order-container .box-container .box{
+	padding: 1rem;
+	position: relative;
+}
+.order-container .box-container .box .status{
+	position: absolute;
+	left: -4%;
+	top: 1%;
+	text-transform: uppercase;
+	font-size: 1rem;
+	margin-bottom: 1rem;
+	border-radius: .5rem;
+	box-shadow: var(--box-shadow);
+	background-color: var(--white-alpha-40);
+	display: inline-block;
+	padding: .5rem;
+}
+.order-container .box-container .box .details{
+	margin-top: 3rem;
+	line-height: 2;
+	color: gray;
+	text-transform: capitalize;
+}
+.order-container .box-container .box span{
+	text-transform: none;
+}
+
+/*------user block-------*/
+.user-container .box-contsiner {
+	margin-top: 3rem;
+}
+.user-container .box-contsiner .box {
+	text-align: center;
+	padding: 2rem;
+	text-transform: capitalize;
+	line-height: 2;
+	color: gray;
+	margin-bottom: 4rem;
+}
+.user-container .box-contsiner .box span{
+	text-transform: none;
+}
+.user-container .box-contsiner .box img{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	box-shadow: var(--box-shadow);
+	padding: .5rem;
+	background-color: var(--white-alpha-40);
+	margin-top: -5rem;
+	margin-bottom: 1rem;
+}
 
 
 /*------media screen-------*/
