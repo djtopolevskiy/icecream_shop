@@ -28,7 +28,7 @@
         <div class="detail">
             <h1>our shop</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis <br> culpa autem reprehenderit, excepturi tempore debitis in quos fugiat, fuga explicabo repellendus, nisi modi itaque?</p>
-            <span><a href="home.php">home</a><i class="bx bx-right-arrow-alt"></i>our shop</span>
+            <span><a href="index.php">home</a><i class="bx bx-right-arrow-alt"></i>our shop</span>
         </div>
     </div>
     <div class="products">

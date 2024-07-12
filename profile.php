@@ -34,7 +34,7 @@
         <div class="detail">
             <h1>profile</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis <br> culpa autem reprehenderit, excepturi tempore debitis in quos fugiat, fuga explicabo repellendus, nisi modi itaque?</p>
-            <span><a href="home.php">home</a><i class="bx bx-right-arrow-alt"></i>profile</span>
+            <span><a href="index.php">home</a><i class="bx bx-right-arrow-alt"></i>profile</span>
         </div>
     </div>
     <section class="profile">

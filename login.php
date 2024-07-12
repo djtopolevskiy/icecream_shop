@@ -20,7 +20,7 @@
       
         if ($select_user->rowCount() > 0) {
           setcookie('user_id', $row['id'], time()+60*60*24*30, '/');
-          header('location:home.php');
+          header('location:index.php');
         }else{
           $warning_msg[] = 'incorrect email or password';
         }
@@ -46,7 +46,7 @@
         <div class="detail">
             <h1>login</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis <br> culpa autem reprehenderit, excepturi tempore debitis in quos fugiat, fuga explicabo repellendus, nisi modi itaque?</p>
-            <span><a href="home.php">home</a><i class="bx bx-right-arrow-alt"></i>login</span>
+            <span><a href="index.php">home</a><i class="bx bx-right-arrow-alt"></i>login</span>
         </div>
     </div>
     <div class="form-container">

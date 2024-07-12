@@ -26,7 +26,7 @@
         <div class="detail">
             <h1>about us</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis <br> culpa autem reprehenderit, excepturi tempore debitis in quos fugiat, fuga explicabo repellendus, nisi modi itaque?</p>
-            <span><a href="home.php">home</a><i class="bx bx-right-arrow-alt"></i>about us</span>
+            <span><a href="index.php">home</a><i class="bx bx-right-arrow-alt"></i>about us</span>
         </div>
     </div>
     <div class="chef">

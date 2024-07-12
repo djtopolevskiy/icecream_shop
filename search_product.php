@@ -30,7 +30,7 @@
         <div class="detail">
             <h1>search products</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis <br> culpa autem reprehenderit, excepturi tempore debitis in quos fugiat, fuga explicabo repellendus, nisi modi itaque?</p>
-            <span><a href="home.php">home</a><i class="bx bx-right-arrow-alt"></i>search products</span>
+            <span><a href="index.php">home</a><i class="bx bx-right-arrow-alt"></i>search products</span>
         </div>
     </div>
     <div class="products">

@@ -1,8 +1,8 @@
 <header class="header">
     <section class="flex">
-        <a href="home.php" class="logo"><img src="image/logo.png" width="130px"></a>
+        <a href="index.php" class="logo"><img src="image/logo.png" width="130px"></a>
         <nav class="navbar">
-            <a href="home.php">home</a>
+            <a href="index.php">home</a>
             <a href="about-us.php">about us</a>
             <a href="menu.php">shop</a>
             <a href="order.php">order</a>
